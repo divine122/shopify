@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from . models import Category,Product
 from . serializers import ProductSerializer,CategorySerializer
-from rest_framework import status,parsers,response,views,permissions
+from rest_framework import status,response,views,permissions
 from drf_yasg.utils import swagger_auto_schema
 from rest_framework.parsers import MultiPartParser,FormParser
 from rest_framework.response import Response
+from rest_framework.decorators import action
 
 # Create your views here.
 
@@ -88,6 +89,4 @@ class CategoryView(views.APIView):
         categories = Category.objects.all()
         serializer = self.serializer_class(categories, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)   
-
-            
 
