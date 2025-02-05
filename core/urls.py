@@ -43,8 +43,7 @@ urlpatterns = [
    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
    path('auth/', include('djoser.urls')),
    path('auth/', include('djoser.urls.jwt')), 
-   path('eCommerce/', include('eCommerce.urls')),
-   path('bag/', include('bag.urls')),
+   
  
    
 ]
