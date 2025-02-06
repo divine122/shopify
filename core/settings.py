@@ -56,6 +56,10 @@ THIRDPARTY_APPS =[
 
 ]
 
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:8000'
+]
+
 INSTALLED_APPS = DJANGO_APPS + CUSTOM_APPS + THIRDPARTY_APPS
 
 MIDDLEWARE = [
@@ -152,5 +156,4 @@ REST_FRAMEWORK = {
     ),
 }
 
-
-
+AUTH_USER_MODEL = 'custom_user.User'
